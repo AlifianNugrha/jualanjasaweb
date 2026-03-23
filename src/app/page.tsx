@@ -104,8 +104,8 @@ export default function Home() {
 
          {/* Stats & Title Section */}
          <section className="pt-56 md:pt-48 pb-16 md:pb-24 bg-navy text-center relative overflow-hidden transition-all duration-700">
-            {/* HERO TOP DECORATION - CENTERED TRIANGLE (INSIDE SECTION) */}
-            <div className="absolute top-0 left-0 w-full h-[25vh] md:h-[44vh] bg-accent-orange pointer-events-none z-0" style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }}></div>
+            {/* HERO TOP DECORATION - CENTERED TRIANGLE (MOBILE ONLY) */}
+            <div className="absolute top-0 left-0 w-full h-[25vh] bg-accent-orange pointer-events-none z-0 md:hidden" style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }}></div>
 
             <div className="container-custom relative z-10">
                <div className="max-w-4xl mx-auto mb-16 text-center">
