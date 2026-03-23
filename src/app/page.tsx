@@ -104,8 +104,14 @@ export default function Home() {
 
          {/* Stats & Title Section */}
          <section className="pt-56 md:pt-48 pb-16 md:pb-24 bg-navy text-center relative overflow-hidden transition-all duration-700">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0 z-0">
+               <img src="/wallpaper.jpg" className="w-full h-full object-cover opacity-40" alt="Background" />
+               <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/80 to-navy"></div>
+            </div>
+
             {/* HERO TOP DECORATION - CENTERED TRIANGLE (MOBILE ONLY) */}
-            <div className="absolute top-0 left-0 w-full h-[25vh] bg-accent-orange pointer-events-none z-0 md:hidden" style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }}></div>
+            <div className="absolute top-0 left-0 w-full h-[15vh] bg-accent-orange pointer-events-none z-0 md:hidden" style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }}></div>
 
             <div className="container-custom relative z-10">
                <div className="max-w-4xl mx-auto mb-16 text-center">
@@ -126,22 +132,36 @@ export default function Home() {
          {/* Pricing Section */}
          <PricingSection />
 
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center py-16 border-t border-white/5">
-            {[
-               { val: '49+', label: 'Website & Sistem Selesai' },
-               { val: '99%', label: 'Kepuasan Client' },
-               { val: '24/7', label: 'Support Project' }
-            ].map((stat, id) => (
-               <div key={id}>
-                  <div className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-1 leading-none">{stat.val}</div>
-                  <div className="text-[12px] font-black text-accent-orange tracking-[0.2em] uppercase">{stat.label}</div>
+         {/* Stats Section with Background */}
+         <section className="relative py-20 overflow-hidden border-t border-white/5">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0 z-0">
+               <img src="/wallpaper2.jpg" className="w-full h-full object-cover opacity-20" alt="Stats BG" />
+               <div className="absolute inset-0 bg-navy/80"></div>
+               {/* Fade Transitions */}
+               <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-navy to-transparent"></div>
+               <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-navy to-transparent"></div>
+            </div>
+
+            <div className="container-custom relative z-10">
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                  {[
+                     { val: '49+', label: 'Website & Sistem Selesai' },
+                     { val: '99%', label: 'Kepuasan Client' },
+                     { val: '24/7', label: 'Support Project' }
+                  ].map((stat, id) => (
+                     <div key={id}>
+                        <div className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-1 leading-none">{stat.val}</div>
+                        <div className="text-[12px] font-black text-accent-orange tracking-[0.2em] uppercase">{stat.label}</div>
+                     </div>
+                  ))}
                </div>
-            ))}
-         </div>
+            </div>
+         </section>
 
 
          {/* Portfolio Marquee Section */}
-         <section id="portfolio" className="py-20 bg-white/5 border-t border-white/5 overflow-hidden">
+         <section id="portfolio" className="py-20 bg-navy border-t border-white/5 overflow-hidden">
             <div className="container-custom mb-16 text-center">
                <span className="text-primary-blue font-black text-[14px] tracking-[0.3em] mb-4 block ">Portofolio</span>
                <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter  leading-none">Hasil Kerja Terkini</h2>
@@ -176,8 +196,17 @@ export default function Home() {
          </section>
 
          {/* Contact Section */}
-         <section id="contact" className="py-20 md:py-32 border-t border-white/5 text-center">
-            <div className="container-custom flex flex-col items-center">
+         <section id="contact" className="relative py-20 md:py-32 border-t border-white/5 text-center overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0 z-0">
+               <img src="/wallpaper3.jpg" className="w-full h-full object-cover" alt="Contact BG" />
+               <div className="absolute inset-0 bg-white/70"></div>
+               {/* Fade Transitions */}
+               <div className="absolute inset-x-0 top-0 h-30 bg-gradient-to-b from-navy to-transparent"></div>
+               <div className="absolute inset-x-0 bottom-0 h-30 bg-gradient-to-t from-white to-transparent"></div>
+            </div>
+
+            <div className="container-custom relative z-10 flex flex-col items-center">
                <div className="bg-white text-navy rounded-none px-6 py-16 md:p-24 text-center relative overflow-hidden border-none shadow-2xl flex flex-col items-center w-full">
                   <h2 className="text-2xl md:text-5xl font-black mb-8 tracking-tighter text-navy leading-tight">Mulailah <br /> <span className="text-primary-blue">bangun project Anda.</span></h2>
                   <a href="https://api.whatsapp.com/send?phone=6283841580448" className="btn-primary py-4 px-12 rounded-none text-base md:text-xl font-black tracking-widest shadow-2xl hover:bg-navy hover:text-white transition-all scale-100 hover:scale-105 duration-300">Hubungi WhatsApp</a>
