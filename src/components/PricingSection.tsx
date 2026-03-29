@@ -296,7 +296,7 @@ export default function PricingSection() {
         </div>
 
         {/* CATEGORY STATUS INDICATOR - BETWEEN SELECTOR AND GRID */}
-        <div className="flex flex-col items-center mb-5 animate-fade-in" key={`status-${activeTab}`}>
+        <div className="flex flex-col items-center mb-5" key={`status-${activeTab}`}>
           <h3 className="text-xl md:text-4xl font-black text-white tracking-tighter text-center">
             {categories.find(c => c.id === activeTab)?.label}
             <span className="text-primary-blue ml-2"> {pricingData[activeTab]?.length || 0} Pilihan</span>
@@ -308,9 +308,13 @@ export default function PricingSection() {
         </div>
 
         {/* PRICING GRID (DEPENDENT ON SELECTION ABOVE) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 animate-fade-in" key={activeTab}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" key={activeTab}>
           {pricingData[activeTab].map((plan: any, i: number) => {
             const isGrowth = plan.name.includes('Growth');
+            const categoryLabel = categories.find(c => c.id === activeTab)?.label || 'Layanan';
+            const waMessage = encodeURIComponent(`Halo Alifian, saya ingin memesan paket *${plan.name}* untuk *${categoryLabel}*. Mohon informasi lebih lanjut mengenai langkah selanjutnya. Terima kasih!`);
+            const waUrl = `https://wa.me/6285188136376?text=${waMessage}`;
+
             return (
               <div
                 key={i}
@@ -344,7 +348,12 @@ export default function PricingSection() {
                   ))}
                 </ul>
 
-                <a href="https://api.whatsapp.com/send?phone=6283841580448" className={`flex items-center justify-between px-6 py-4 text-[12px] md:text-[14px] font-black tracking-[0.2em] transition-all duration-300 shadow-xl group uppercase ${isGrowth ? 'bg-amber-400 text-navy hover:bg-white' : 'bg-primary-blue text-white hover:bg-navy'}`}>
+                <a 
+                  href={waUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center justify-between px-6 py-4 text-[12px] md:text-[14px] font-black tracking-[0.2em] transition-all duration-300 shadow-xl group uppercase ${isGrowth ? 'bg-amber-400 text-navy hover:bg-white' : 'bg-primary-blue text-white hover:bg-navy'}`}
+                >
                   <span>Pilih Paket</span>
                   <ShoppingCart size={18} className="group-hover:scale-110 transition-transform" />
                 </a>

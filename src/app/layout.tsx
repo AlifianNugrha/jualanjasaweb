@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className={`${jakarta.className} bg-navy antialiased text-white`}>
+      <body className={`${jakarta.className} bg-navy antialiased text-white`} suppressHydrationWarning>
         <LanguageProvider>
           {children}
         </LanguageProvider>

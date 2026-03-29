@@ -7,6 +7,13 @@
   --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
 }
 
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 @layer base {
   body {
     @apply bg-navy text-white font-plus-jakarta antialiased;
@@ -79,5 +86,9 @@
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  .fade-section {
+    opacity: 0;
   }
 }
