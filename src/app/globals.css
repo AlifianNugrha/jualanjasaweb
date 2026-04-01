@@ -7,11 +7,14 @@
   --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
 }
 
-html, body {
-  overflow-x: hidden;
+html {
   margin: 0;
   padding: 0;
-  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 @layer base {
@@ -62,15 +65,15 @@ html, body {
 }
 
 /* Hide scrollbar */
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   @apply bg-navy;
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
 }
 @layer utilities {
