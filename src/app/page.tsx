@@ -365,7 +365,7 @@ export default function Home() {
                </div>
 
                {/* Workflow Steps */}
-               <div className="border border-white/10 bg-white/[0.02] p-8 md:p-12">
+               <div>
                   <div className="text-center mb-10">
                      <span className="text-[11px] font-black tracking-[0.3em] text-accent-orange uppercase block mb-2">
                         Alur Kerja Kami
@@ -375,23 +375,28 @@ export default function Home() {
                      </h3>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                      {[
                         { step: '01', title: 'Konsultasi Gratis', desc: 'Diskusi kebutuhan, fitur, referensi, dan pemilihan paket yang pas.' },
                         { step: '02', title: 'Perencanaan & Desain', desc: 'Penyusunan arsitektur halaman dan konsep desain yang disetujui.' },
                         { step: '03', title: 'Coding & Pengujian', desc: 'Pembuatan kode bersih, integrasi fitur, dan uji performa di berbagai device.' },
                         { step: '04', title: 'Live & Serah Terima', desc: 'Website online dengan domain & hosting aktif serta panduan lengkap.' },
                      ].map((item, idx) => (
-                        <div key={idx} className="relative flex flex-col">
-                           <span className="text-4xl md:text-5xl font-black text-white/10 mb-3 tracking-tighter">
-                              {item.step}
-                           </span>
-                           <h4 className="text-base md:text-lg font-black text-white mb-2 tracking-tight">
-                              {item.title}
-                           </h4>
-                           <p className="text-white/50 text-xs md:text-sm font-semibold leading-relaxed">
-                              {item.desc}
-                           </p>
+                        <div
+                           key={idx}
+                           className="bg-white text-navy p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl relative group"
+                        >
+                           <div>
+                              <span className="text-4xl md:text-5xl font-black text-accent-orange/30 group-hover:text-accent-orange transition-colors duration-300 block mb-3 tracking-tighter">
+                                 {item.step}
+                              </span>
+                              <h4 className="text-lg md:text-xl font-black text-navy mb-2 tracking-tight">
+                                 {item.title}
+                              </h4>
+                              <p className="text-navy/70 text-xs md:text-sm font-semibold leading-relaxed">
+                                 {item.desc}
+                              </p>
+                           </div>
                         </div>
                      ))}
                   </div>
