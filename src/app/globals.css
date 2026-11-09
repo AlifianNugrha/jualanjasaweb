@@ -94,4 +94,15 @@ html::-webkit-scrollbar-thumb {
   .fade-section {
     opacity: 0;
   }
+
+  /* ── Hero button looping gentle bounce ── */
+  @keyframes heroBounce {
+    0%, 100% { transform: translateY(0px); }
+    40%       { transform: translateY(-6px); }
+    60%       { transform: translateY(-3px); }
+  }
+
+  .animate-hero-bounce {
+    animation: heroBounce 2.6s ease-in-out infinite;
+  }
 }
