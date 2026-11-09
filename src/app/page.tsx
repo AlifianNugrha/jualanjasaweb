@@ -5,7 +5,7 @@ import PricingSection from '@/components/PricingSection';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
-   Menu, X, Instagram, Mail, Linkedin, ExternalLink, ChevronDown, ShieldCheck, Zap, Smartphone, Sparkles
+   Menu, X, Instagram, Mail, Linkedin, ExternalLink, ChevronDown
 } from 'lucide-react';
 
 // ─────────────────────────────────────────────────────────
@@ -332,38 +332,31 @@ export default function Home() {
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
                   {[
                      {
-                        icon: <Zap className="text-accent-orange" size={28} />,
                         title: 'Proses Cepat & Tepat Waktu',
                         desc: 'Timeline pengerjaan transparan sejak hari pertama. Website Anda live sesuai jadwal yang disepakati tanpa drama.',
                      },
                      {
-                        icon: <Smartphone className="text-primary-blue" size={28} />,
                         title: '100% Responsif & Modern',
                         desc: 'Tampilan rapi dan adaptif sempurna di layar smartphone, tablet, laptop hingga layar monitor besar.',
                      },
                      {
-                        icon: <Sparkles className="text-yellow-400" size={28} />,
-                        title: 'Teknologi Canggih & SEO',
-                        desc: 'Dibangun dengan teknologi Next.js terkini. Loading secepat kilat dan struktur ramah mesin pencari Google.',
+                        title: 'Teknologi Canggih',
+                        desc: 'Dibangun dengan teknologi modern terkini. Loading secepat kilat dan struktur ramah mesin pencari Google.',
                      },
                      {
-                        icon: <ShieldCheck className="text-emerald-400" size={28} />,
                         title: 'Garansi Bebas Bug & Support',
                         desc: 'Dilengkapi garansi maintenance dan video panduan kelola website agar Anda bisa menggunakannya dengan tenang.',
                      },
                   ].map((card, i) => (
                      <div
                         key={i}
-                        className="bg-white/5 border border-white/10 p-8 flex flex-col justify-between hover:bg-white/10 hover:border-primary-blue/30 transition-all duration-300 group"
+                        className="bg-white text-navy p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                      >
                         <div>
-                           <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                              {card.icon}
-                           </div>
-                           <h3 className="text-lg md:text-xl font-black text-white tracking-tight mb-3">
+                           <h3 className="text-lg md:text-xl font-black text-navy tracking-tight mb-3">
                               {card.title}
                            </h3>
-                           <p className="text-white/50 text-xs md:text-sm font-semibold leading-relaxed">
+                           <p className="text-navy/70 text-xs md:text-sm font-semibold leading-relaxed">
                               {card.desc}
                            </p>
                         </div>
