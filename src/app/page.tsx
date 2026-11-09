@@ -228,8 +228,8 @@ export default function Home() {
 
    const navItems = [
       { name: 'Tentang',    id: 'about' },
-      { name: 'Portofolio', id: 'portfolio' },
       { name: 'Harga',      id: 'pricelist' },
+      { name: 'Portofolio', id: 'portfolio' },
       { name: 'Kontak',     id: 'contact' },
    ];
 
@@ -507,8 +507,17 @@ export default function Home() {
                   <div>
                      <h4 className="text-1xl font-black text-accent-orange mb-8">Informasi</h4>
                      <ul className="flex flex-col gap-4">
-                        {['Tentang Kami','Portofolio','Pilihan Harga','Hubungi Kami'].map(l => (
-                           <li key={l}><button onClick={() => scrollTo('about')} className="text-navy/70 hover:text-primary-blue transition-colors text-sm font-bold">{l}</button></li>
+                        {[
+                           { name: 'Tentang Kami', id: 'about' },
+                           { name: 'Pilihan Harga', id: 'pricelist' },
+                           { name: 'Portofolio', id: 'portfolio' },
+                           { name: 'Hubungi Kami', id: 'contact' },
+                        ].map(info => (
+                           <li key={info.id}>
+                              <button onClick={() => scrollTo(info.id)} className="text-navy/70 hover:text-primary-blue transition-colors text-sm font-bold">
+                                 {info.name}
+                              </button>
+                           </li>
                         ))}
                      </ul>
                   </div>
